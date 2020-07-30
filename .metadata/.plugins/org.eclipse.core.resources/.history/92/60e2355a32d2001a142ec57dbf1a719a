@@ -1,0 +1,50 @@
+package com.biz.order.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.biz.order.dao.OrderDao;
+import com.biz.order.model.OrderVO;
+
+@Service
+public class OrderServiceImplV1 implements OrderService {
+	
+	// 초기화 시켜주는 annotation
+	@Autowired
+	private OrderDao orderDao;
+	
+	
+	@Override
+	public List<OrderVO> selectAll() {
+
+		return null;
+	}
+
+	@Override
+	public OrderVO findBySeq(long seq) {
+		// seq값을 매개변수로 받아 주문서 1개를 받아 return하돌독
+		OrderVO orderVO = orderDao.findBySeq(seq);
+		return orderVO;
+	}
+
+	@Override
+	public int insert(OrderVO orderVO) {
+
+		return 0;
+	}
+
+	@Override
+	public int update(OrderVO orderVO) {
+
+		return 0;
+	}
+
+	@Override
+	public int delete(long seq) {
+
+		return 0;
+	}
+
+}

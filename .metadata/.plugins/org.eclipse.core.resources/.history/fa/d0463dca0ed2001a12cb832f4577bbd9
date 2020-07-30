@@ -1,0 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<nav>
+	<ul>
+	<!-- #p1 는 태그 id를 쓸 때사용하는 것 이므로 이렇게 #p1으로 해두는 것 : 북마크 -->
+		<li><a href="#">HOME &#128044;	</a></li>
+		<li><a href="#p1">주문서 &#128044;</a></li>
+		<li><a href="#p2">공지사항 &#128044;</a></li>
+		<li><a href="#p3">바로가기 &#128044;</a></li>
+		<li><a href="#">로그인 &#128044;</a></li>
+		<li><a href="#">회원가입 &#128044;</a></li>
+	</ul>
+</nav>

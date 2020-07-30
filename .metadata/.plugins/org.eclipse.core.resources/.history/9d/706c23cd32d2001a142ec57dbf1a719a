@@ -1,0 +1,15 @@
+package com.biz.order.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+@Controller
+public class OrderController {
+	
+	public String getOrder(Model model) {
+		
+	}
+	
+	
+	
+}

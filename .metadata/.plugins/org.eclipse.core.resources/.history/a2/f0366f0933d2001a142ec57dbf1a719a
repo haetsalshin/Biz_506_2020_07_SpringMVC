@@ -1,0 +1,22 @@
+package com.biz.order.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+import com.biz.order.service.OrderService;
+
+@Controller
+public class OrderController {
+	
+	
+	@Autowired
+	private OrderService oService;
+	
+	public String getOrder(Model model) {
+		
+	}
+	
+	
+	
+}

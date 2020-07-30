@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<div id="header">
+
+</div>
+	
+
+
+<header>
+	<h3>나의 웹 어플리케이션</h3>
+	<P>나의 웹 어플리케이션에 방문해 주셔서 고맙습니다</P>
+	
+
+
+</header>

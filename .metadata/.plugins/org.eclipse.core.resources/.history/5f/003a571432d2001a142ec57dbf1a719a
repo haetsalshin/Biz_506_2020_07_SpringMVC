@@ -1,0 +1,39 @@
+package com.biz.order.service;
+
+import java.util.List;
+
+import com.biz.order.model.OrderVO;
+
+public class OrderServiceImplV1 implements OrderService {
+
+	@Override
+	public List<OrderVO> selectAll() {
+
+		return null;
+	}
+
+	@Override
+	public OrderVO findBySeq(long seq) {
+
+		return null;
+	}
+
+	@Override
+	public int insert(OrderVO orderVO) {
+
+		return 0;
+	}
+
+	@Override
+	public int update(OrderVO orderVO) {
+
+		return 0;
+	}
+
+	@Override
+	public int delete(long seq) {
+
+		return 0;
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.biz.order.dao;
+// package이름만 복사한 다음에 order-mapper.xml에 붙여넣기 해준다.
+import java.util.List;
+
+import com.biz.order.model.OrderVO;
+
+public interface OrderDao {
+	
+	public List<OrderVO> selectAll();
+	
+
+}

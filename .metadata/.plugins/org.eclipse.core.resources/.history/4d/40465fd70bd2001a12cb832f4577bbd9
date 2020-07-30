@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<!--  이 파일은 stylesheet구조다.요즘에는 type을 사용하지 않지만 어떤 곳은 명시 해야만 해야되기도 한다. -->
+<!--  내가 어제 navi와 header부분 디자인 만들어 놓은 것을 그대로 불러와서 적용하는 것. -->
+
+	<%@ include file = "/WEB-INF/views/include/include-head.jspf" %>
+</head>
+<body>
+	<%@ include file = "/WEB-INF/views/include/include-header.jspf" %>
+	<%@ include file= "/WEB-INF/views/include/include-nav.jspf" %>
+	
+	<section>
+	<h3>반갑습니다 &#128131; </h3>
+	<p>나는 ${name} 입니다. &#128064; </p>
+	
+	</section>
+	<section>
+		<img src ="resources/images/turkey.jpg" alt ="터키 사진" width="300px" >
+		
+	
+	</section>	
+	<footer>
+		<!-- address라는 태그로 감싸면 이탤릭체로 된다. -->
+		<!--  &앤드는 아래와 같이 copy와 amp같은 걸 쓸 때 써주기 때문에 둘이 중복되지 않도록
+		원래는 사용하는 것이 금지 되어 있다. 그래서 저런형식으로 써주는 것. -->
+		<address>CopyRight &copy; sinsin09022@gamil.com &#128157;</address>
+		<address>Korea &amp; 대한민국 &#128123;</address>
+	</footer>
+	<p>서버의 현재 시각 ${serverTime}</p>
+</body>
+</html>
