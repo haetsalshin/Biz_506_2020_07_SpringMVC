@@ -44,6 +44,8 @@
     <div>
     	<button type="button">처음으로</button>
     	<!-- type="submit : 기본값 -->
+    	<!--  submit로 써주지 않으면 우리가 작성한 글을 전송하지 않기 때문에 
+    	꼭 submit button을 사용해야 한다. -->
     	<button type="submit">저장</button>
     </div>
     </form>
