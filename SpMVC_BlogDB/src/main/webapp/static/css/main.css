@@ -1,0 +1,150 @@
+@charset "UTF-8";
+/*
+    html css 코딩을 할 때
+    width값은 browser의 최대 width값을 기준으로 하여
+    % 값으로 요소(엘리먼트)의 width를 지정할 수 있다.
+
+    height 값은 browser의 height값과는 전혀 다른 상대를 대상으로 만들어져서
+    요소들의 height값을 %로 지정할 수 없다.
+
+    각 요소들의 height 값을 %으로 지정하기 위해서 
+    먼저 html과 body height값을 지정해주어야 한다.
+    그래야 나머지 height값을 지정할 수 있다.
+
+*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+}
+header{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    border: 1px solid black;
+    text-align: center;
+    padding: 1.5rem;
+
+    background-image: url("../images/이탈리아.png");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    background-size: 100%;
+    /*header는 고정시키고 스크롤을 내리면 내용이 위로 올라감
+    화면은 그대로 있고 background는 말려 올라가는 것
+    요즘 유행하는 style*/
+    background-attachment: fixed;
+    
+
+    color: white;
+    
+}
+
+#main{
+	min-height: 80%;
+	
+    background-image: url("../images/549f3f1c12210774.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+}
+
+#button{
+    width: 80%;
+    padding-top: 8px;
+    text-align: right;
+    margin: 0 auto;
+}
+/*
+    id값이 button으로 설정된 box에 소속되어 있는 button tag에만
+    style을 지정하자
+*/
+#button button{
+    background-color: rgb(15, 13, 116);
+    color: white;
+    /* 
+        padding, margin 에서많이 사용하는 단위
+        rem : 내부의 text 크기를 1로 하여 비례적으로 적용하는 값
+            button의 경우 표준 design guide에서 개정한 값으로 
+        top, buttom : 8px / left, right : 16px
+    */
+    padding: 8px;
+    vertical-align: middle;
+    cursor: wait;
+    /* transparent : 투명색
+        hover에서 밑줄 효과를 주고자 할 때 
+        화면이 흔들리는 현상을 막기 위하여
+        기본 테두리의 bottom을 투명색으로 같은 두께만큼 지정을 하는 것
+    */
+
+    border-bottom: 2px solid transparent;
+    transition: all 1s linear;
+}
+#button button:hover{
+    background-color: honeydew;
+    color: white;
+    border-bottom: 2px solid green;
+}
+
+/*
+    margin, padding의 값 지정
+    4개의 값 : Top부터 시계방향으로 1개씩 지정
+    2개의 값 : Top, Botton그리고 Left, Right
+
+
+    auto는 바깥 쪽에 감싸고 있는 box의 중앙에 오도록 한다
+*/
+#blog_body{
+    width: 80%;
+    border: 1px solid green;
+    /*
+        blog_body box의 top과 botton 여백을 10px로 하고 
+        left, right 여백은 바깥쪽 box 크기를 계산하여
+        같은 값으로 자동 조잘하라 라는 의미
+         == 현재 blog_body를 좌우 중앙에 정렬하는 용도로 많이 쓰인다.
+    */
+    margin: 10px auto;
+    
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 2s linear;
+    
+    background-color: rgba(0,0,255,0.2);
+    color: white;
+    
+}
+footer{
+    background-color: rgb(241, 204, 241);
+    text-align: center;
+    padding: 8px;
+}
+.blog_title{
+    background-color: rgb(15, 30, 70);
+    padding: 8px;
+}
+
+.blog_title:hover{
+    color: skyblue;
+
+}
+
+.blog_text{
+    padding: 8px;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}

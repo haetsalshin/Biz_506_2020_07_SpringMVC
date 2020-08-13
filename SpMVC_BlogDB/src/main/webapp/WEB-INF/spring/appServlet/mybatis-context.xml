@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	<!-- datdSource : 연결 POLL 설정, 연결정보 -->
+	<!-- bean (객체,Ojbect) : 클래스를 사용할 수 있도록 객체로 만들어서 보관해 달라 
+		class : 객체로 만들 클래스를 지정
+		BasicDataSource oracleDs = new BasicDataSource(); 랑 똑같다고 볼 수 있다.
+		id는 변수명, 때문에 똑같은거 2개 이상 나오면 절대 안된다.
+		
+		
+	
+	-->
+	<bean id="oracleDs" class="org.apache.commons.dbcp2.BasicDataSource">
+	<!--  이제 데이터 넣어주기 
+		datasource에게는 4가지의 변수가 필요하다.
+		오라클 DB에 접근하기 위한 정보를 설정하는 것
+		
+		변수 값을 value로 설정한다.	
+		value로 설정 : 일반 문자열이기 때문에 value로 설정한다.
+		
+		
+	-->
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+		<property name="username" value="user1"/>
+		<property name="password" value="user1"/>
+	
+	</bean>
+	
+	<!-- SqlSessionFactoryBean : POLL과 연결, SqlSession 생성하는 용도 -->
+	<!-- 이제 위에서 만든 값들을 sessionfacotry를 만들어 주입할 것이다. -->
+	<bean id="sqlFactory" class="org.mybatis.spring.SqlSessionFactoryBean" >
+	<!--  특이하게 dataSource는 값을 주입할 때 value가 아닌 ref로 주입한다.
+	
+	하지만 밑의 oracleDs는 basicDataSource를 통해 만든것으로 type은BasicDataSource(객체)이기 떄문에
+	레퍼런스로 주입을 하는 것이다.
+	
+	위에 우리가 설정한 basicDataSource id를 넣어준다. -->
+		<property name="dataSource" ref="oracleDs"/>
+		<property name="configLocation" value="/WEB-INF/spring/mybatis/mybatis-config.xml"/>
+		<property name="mapperLocations" value="/WEB-INF/spring/mybatis/mapper/blog-mapper.xml"/>
+	
+	</bean>
+	
+	<!-- SqlSession(SqlSessionTemplate) : SQL을 전송하는 담당 -->
+	<!--  
+	
+	SqlSessionTemplate :
+		mapper와 연결해서 DB에 연결하고 그 DB에서 데이터를 가져오는 역할 
+		
+		여기는 property가 아닌 생성자를 주입시킨다. 위에서 설정한 sqlFactory(객체)
+		이기 때문에 여기 또한 ref로 주입한다.
+		-->
+	<bean class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlFactory" index="0"/>
+	</bean>
+	
+	
+	
+</beans>
