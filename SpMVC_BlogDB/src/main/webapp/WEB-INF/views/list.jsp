@@ -33,15 +33,15 @@
        items=${BLOGS}: 컨트롤러로부터 받은 값 
        var="BLOG" : 변수
         
-   		${BLOG.title}에서 title은 VO에 있는 변수 명과 같아야 한다.]
+   		${BLOG.title}에서 title은 VO에 있는 변수 명과 같아야 한다.
         */ %>
         	<c:forEach items="${BLOGS}" var="BLOG">
             <section class="blog_title">
-                <h3>${BLOG.title} - <span>${BLOG.user}</span></h4>
+                <h3>${BLOG.bl_title} - <span>${BLOG.bl_user}</span></h4>
                
             </section>    
             <section class="blog_text">
-              	<h5>${BLOG.content}</h5>
+              	<h5>${BLOG.bl_contents}</h5>
             	
             </section>
             </c:forEach>
