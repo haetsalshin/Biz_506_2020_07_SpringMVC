@@ -5,7 +5,27 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-08-14T01:12:11Z</updated>
+  <updated>2020-08-14T06:10:08Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: RSocket everywhere and Maciej Walkowiak on Spring Cloud AWS</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/08/14/a-bootiful-podcast-rsocket-everywhere-and-maciej-walkowiak-on-spring-cloud-aws" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-08-14:4171</id>
+    <updated>2020-08-14T06:10:08Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; has RSocket on the brain with his latest talk, RSocket Revolution, the new RSocket chapter in his book &lt;em&gt;Reactive Spring&lt;/em&gt;, and the work he&amp;rsquo;s doing on Spring Retrosocket, a declarative Feign-like RSocket client. Then, Josh talks to Spring ecosystem luminary &lt;a href="http://twitter.com/maciejwalkowiak"&gt;Maciej Walkowiak (@maciejwalkowiak)&lt;/a&gt; about what he&amp;rsquo;s doing at the helm of Spring Cloud AWS.&lt;/p&gt;
+&lt;iframe title="RSocket everywhere and Spring luminary Maciej Walkowiak on Spring Cloud AWS" height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/media/player/id3f7-e70e2f?from=pb6admin&amp;download=1&amp;version=1&amp;auto=0&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Helvetica&amp;skin=1&amp;pfauth=&amp;btn-skin=107"&gt;&lt;/iframe&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="http://github.com/spring-cloud/spring-cloud-aws"&gt;Spring Cloud AWS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Maciej&amp;rsquo;s recent video on getting started with &lt;a href="https://www.youtube.com/watch?v=Ts2a-YdN6vI"&gt;Spring Cloud AWS&lt;/a&gt; on his excellent YouTube channel Spring Academy&lt;/li&gt;
+  &lt;li&gt;Josh&amp;rsquo;s book &lt;a href="http://ReactiveSpring.io"&gt;&lt;em&gt;Reactive Spring&lt;/em&gt;&lt;/a&gt; has been updated with a new whopping 70+ page chapter on RSocket&lt;/li&gt;
+  &lt;li&gt;Josh&amp;rsquo;s &lt;a href="https://www.youtube.com/watch?v=ipVfRdl5SP0&amp;t=1s"&gt;&lt;em&gt;The RSocket Revolution&lt;/em&gt;&lt;/a&gt; talk&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://github.com/spring-projects-experimental"&gt;Spring Retrosocket&lt;/a&gt; - a declarative client for RSocket ? la Feign or Retrofit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Config file processing in Spring Boot 2.4</title>
     <link rel="alternate" href="https://spring.io/blog/2020/08/14/config-file-processing-in-spring-boot-2-4" />
@@ -1913,19 +1933,6 @@ We also specify the &lt;code&gt;route&lt;/code&gt; that we want to use in our te
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Josh Lock on supply chain security, Docker trust, TUF, and more</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/07/30/a-bootiful-podcast-josh-lock-on-supply-chain-security-docker-trust-tuf-and-more" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-07-30:4148</id>
-    <updated>2020-07-30T23:52:49Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! In this installment &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks about yaks, the implicit tension in systems design, and then talks with &lt;a href="http://twitter.com/hi_joshuagl"&gt;Josh Lock (@hi_joshuagl)&lt;/a&gt; (Levenshtein distance: 2!) about supply chain security, Docker trust, TUF, and more.&lt;/p&gt;
-&lt;iframe title="Josh Lock on supply chain security, Docker trust, TUF, and more " height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/media/player/r25bt-e50f2d?from=pb6admin&amp;amp;download=1&amp;amp;version=1&amp;amp;auto=0&amp;amp;share=1&amp;amp;download=1&amp;amp;rtl=0&amp;amp;fonts=Helvetica&amp;amp;skin=1&amp;amp;pfauth=&amp;amp;btn-skin=107"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
