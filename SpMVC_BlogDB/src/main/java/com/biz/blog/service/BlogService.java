@@ -12,7 +12,9 @@ public interface BlogService {
 	// 데이터는 절대 2개 이상 나오지 않는다
 	// 반드시 1개만 나온다
 	// return type이 절대 List형이 아니다.
+	
 	public BlogVO findBySeq(long seq);
+	
 	
 	// 제목으로 검색하기
 	// PK 칼럼이 아닌 나머지 칼럼을 대상으로 조회를 하면
@@ -24,6 +26,7 @@ public interface BlogService {
 	// 성공을 하면 1 이상의 리턴결과를 정수형으로 리턴한다.
 	public int insert(BlogVO blogVO);
 	public int update(BlogVO blogVO);
+	
 	public int delete(long seq);
 
 }
