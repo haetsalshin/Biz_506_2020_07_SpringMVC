@@ -11,9 +11,13 @@ C:\bizwork\workspace\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearc
 \SpMVC_BlogDB\src\main\java
 C:\bizwork\workspace\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3852133356.index
 \SpMVC_Blog\src\main\java
+C:\bizwork\workspace\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2078603765.index
+\SpMVC_ShopV1\src\main\java
 C:\bizwork\workspace\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3446789254.index
 \SpMVC_BlogV2\src\main\java
 C:\bizwork\workspace\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1294321008.index
 \SpMVC_001_OrderV2\src\main\java
+C:\bizwork\workspace\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1758249094.index
+\SpMVC_ShopV2\src\main\java
 C:\bizwork\workspace\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3281402967.index
 \SpMVC_BlogV3\src\main\java
