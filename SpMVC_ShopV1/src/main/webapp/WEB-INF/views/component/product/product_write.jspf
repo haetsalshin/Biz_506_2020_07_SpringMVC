@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="rootPath" value="${pageContext.request.contextPath}" />
+
+<form method="POST">
+        <!-- box를 묶어주는 것. 반드시 legend와 사용해야한다. -->
+        <fieldset>
+            <!-- box에 제목을 지어주는것 반드시 fieldset으로 묶어 준 후에 사용해야한다. -->
+            <legend>상품정보 등록</legend>
+            <div><label>상품코드</label><input name="p_code" id="p_code" /></div>
+            <div><label>상품이름</label><input name="p_name" id="p_name" /></div>
+            <div><label>주매입처</label><input name="p_dcode" id="p_dcode" /></div>
+            <div><label>상품규격</label><input name="p_std" id="p_std" /></div>
+            <!-- type="number" 우리가 숫자를 입력할 수 있는 화면이 나오도록 만들어준다. (스마프폰에서는
+            숫자 9칸 나오는거)
+              -->
+            <div><label>매입가격</label><input type="number" name="p_iprice" id="p_iprice" /></div>
+            <div><label>판매가격</label><input type="number" name="p_oprice" id="p_oprice" /></div>
+            <!-- type="file"로 해주면 파일을 선택할 수 있는 형태로 변환이 된다. -->
+            <div><label>대표이미지</label><input  type="file" id="p_image" /></div>
+            <div id="btn_box">
+                <button type="button">리스트</button>
+                <button type="submit">저장</button>
+            </div>
+        </fieldset>
+    </form>
