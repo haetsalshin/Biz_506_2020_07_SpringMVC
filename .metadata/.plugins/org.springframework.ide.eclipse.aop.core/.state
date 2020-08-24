@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="SpMVC_BlogDB_V2"/>
 <aop-project name="SpMVC_ShopV1"/>
+<aop-project name="SpMVC_ShopV2"/>
 </aop-reference-model>
