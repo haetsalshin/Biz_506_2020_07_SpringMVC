@@ -5,7 +5,7 @@
 	version="4.0">
 	<!-- 한글 encoding하는 부분
 		누군가에 서버에 요청하는 모든 정보가 있으면 그거에 관련하여 encKor로 보내서 뭔가 처리를 해라
-		이 친구는 CHaracherEncodingFilter를 이용해서 한글 관련한 것을 UTF-8로 엔코딩해서 보내준다.
+		이 친구는 CharacterEncodingFilter를 이용해서 한글 관련한 것을 UTF-8로 엔코딩해서 보내준다.
 		dispacter가 받아서 filter로 보내고 이걸 다시 controller로 보낸다
 		즉 controller로 보내기 전에 한글로 먼저 엔코딩을 한다.
 	 -->

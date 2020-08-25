@@ -13,8 +13,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="td"/>
 		<list key="findhistory">
+			<item value="th"/>
 			<item value="햄버거"/>
 			<item value="나의 홈페이지"/>
 			<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;"/>
@@ -28,6 +29,7 @@
 			<item value="filter"/>
 		</list>
 		<list key="replacehistory">
+			<item value="td"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

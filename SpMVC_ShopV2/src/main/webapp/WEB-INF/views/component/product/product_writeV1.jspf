@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form"  prefix="form"%>
-
-
 <c:set var="rootPath" value="${pageContext.request.contextPath}" />
 <link rel="stylesheet" type="text/css" href="${rootPath}/static/css/input.css?ver=2020-08-24" />
 <script>
@@ -65,37 +62,32 @@
 		})
 	})
 </script>
-<form:form modelAttribute="PRO_VO">
+<form method="POST">
 	<fieldset>
 		<legend>상품정보 등록</legend>
 		<div>
-			<label>상품코드</label>
-			<form:input path="p_code" class="m_code"/>
-			<button type="button" id="p_code_gen" class="m_code_gen">코드생성</button>
+			<label>상품코드</label><input name="p_code" id="p_code" value="${PRO_VO.p_code}"/>
+			
+			<button type="button" id="p_code_gen">코드생성</button>
 		</div>
 		<div>
-			<label>상품이름</label>
-			<form:input path="p_name"/>
+			<label>상품이름</label><input name="p_name" id="p_name" value="${PRO_VO.p_name}" />
 			
 		</div>
 		<div>
-			<label>주매입처</label>
-			<form:input path="p_dcode" />
+			<label>주매입처</label><input name="p_dcode" id="p_dcode" value="${PRO_VO.p_dcode}"/>
 			
 		</div>
 		<div>
-			<label>상품규격</label>
-			<form:input path="p_std" />
+			<label>상품규격</label><input name="p_std" id="p_std" value="${PRO_VO.p_std}"/>
 			
 		</div>
 		<div>
-			<label>매입가격</label>
-			<form:input type="number" path="p_iprice" />
+			<label>매입가격</label><input type="number" name="p_iprice" id="p_iprice"  value="${PRO_VO.p_iprice}"/>
 			
 		</div>
 		<div>
-			<label>판매가격</label>
-			<form:input type="number" path="p_oprice" />
+			<label>판매가격</label><input type="number" name="p_oprice" id="p_oprice" value="${PRO_VO.p_oprice}"/>
 			
 		</div>
 		<div>
@@ -106,4 +98,4 @@
 			<button type="button" id="btn_save">저장</button>
 		</div>
 	</fieldset>
-</form:form>
+</form>

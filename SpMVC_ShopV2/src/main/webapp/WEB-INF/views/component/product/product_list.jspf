@@ -75,6 +75,7 @@ article a:hover{
 		$(".pro_item").click(function(){
 			/* tr의 children들 (td)의 0번째에 들어있는(상품코드 값)을 가져와서
 			p_code에 담아라
+			
 				쌤) tr들 중에 한 항목을 클릭하면
 				 	그 항목에 대한 정보가 this에 담겨있게 된다.
 				 	this에 담긴 정보 중에 자손 tag(td)를 찾고
@@ -89,7 +90,13 @@ article a:hover{
 			const p_code1 = $(this).data("pcode")
 			//alert(p_code1)
 			
-			document.location.href="${rootPath}/product/detail?p_code=" + p_code
+			document.location.href="${rootPath}/product/detail?id=" + p_code 
+			// ?id=P00001
+					
+			// `${rootPath}/product/detail?id=${p_code}` ->불가능
+			// 문자열 탬플릿트
+			// ES6(ESCMA 2015)에서는 백틱을 사용하여 변수명과 문자열을 합성할 수 있다.
+			// 하지만 JSP에서는 EL tag과 문법충돌로 인하여 사용이 불가능하다. 
 		})
 	})
 
