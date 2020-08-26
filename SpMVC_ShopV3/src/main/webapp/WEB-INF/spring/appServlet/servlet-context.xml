@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<!-- annotation-driven : 이것 덕분에 우리가 bean을 (mybatis-context.xml)처름 일일이 하나하나 다 만들지 않고 
+	이렇게 쉽게 만들 수 있는 것이다. -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	
+	<!-- 해당주소는 우리가 바꾸고 싶으면 바꿔도 된다.
+	만약 누군가가 static폴더안에 들어 있는 무언가를 요청하면 (이미지 css등등)
+	우리 프로젝트에 static이라는 폴더가 있는지 찾아보고 있으면 그걸 그냥 줘버려라
+	이 표시가 되어 있는 무언가를 req하면 이 친구는 dispacter가 가로채서 controller로 보내지 않고 return해버린다.
+	우리는 파일만 만들어서 넣어두면 css 스크립트 이미지 등등 기타 여러가지는 굳이 controller로 보내지 않고
+	dispacter에게 HTTP GET방식으로 요청하면 그냥 줘버려라 하는 것.
+	
+	
+	사용자의 getter요청이 있을 때 static아래에 있는 controller로 보내지 않고 바로 파일로 읽어서 server로 response해라.
+	 --> 
+	<resources mapping="/static/**" location="/static/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory 
+	NVC모델에서 가장 많이 쓰는 방식 internalResourceViewResolver : jsp파일을 읽어서 model데이터와 렌더링.
+	-->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<!-- 
+	/WEB-INF/views/home.jsp을 붙여서 파일을 읽어서 랜더링 할 수 있게 만들어 주는 코드 -->
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<!-- 해당 패키지에 있는 코드를 검사해서 annotation이 붙여 있으면 bean으로 만들어라.
+	그럼 우리가 하나하나 bean으로 만들어야 하는 수고를 덜 수 있다. -->
+	<context:component-scan base-package="com.biz.shop.controller" />
+	<context:component-scan base-package="com.biz.shop.service" />
+	
+	
+	
+</beans:beans>
