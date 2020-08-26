@@ -8,8 +8,7 @@
 
       body {
         height: 100vh;
-        background-color: #34496e;
-        background-image: url("/static/images/단색.jpg");
+        background-image: url("../images/단색.jpg");
         background-size: cover;
         background-position: center center;
         position: relative;
@@ -30,7 +29,7 @@
         위에서 50%위치, 왼쪽에서 50%위치로 지정하고
         다시 현재 박스의 width 50%만큼을 왼쪽으로 이동하고
         box의 height의 50% 만큼을 위로 (-50%) 이동
-*/
+		*/
         position: absolute;
         top: 50%;
         left: 50%;
