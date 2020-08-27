@@ -25,3 +25,5 @@ C:\bizwork\workspace\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearc
 \SpMVC_BlogV3\src\main\java
 C:\bizwork\workspace\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2662869803.index
 \SpMVC_ShopV1\src\main\java
+C:\bizwork\workspace\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1318892128.index
+\SpMVC_ShopV4\src\main\java
