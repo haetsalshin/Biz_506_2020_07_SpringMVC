@@ -10,8 +10,10 @@
 <title>나의 홈페이지</title>
 </head>
 <body>
-	<h3>나의 홈페이지 방문을 환영합니다</h3>
-	<form method="POST" action="${rootPath}/book">
+	<h3>Herzlich Willkommen zu meiner HomePage!</h3>
+	<p> Ich bin haetsalshin
+	<p> Suchen Sie alles hier
+	<form method="POST" action="${rootPath}/naver/api">
 		<input name="book_name">
 		<button>검색</button>
 	</form>

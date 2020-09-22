@@ -1,5 +1,7 @@
 package com.biz.book.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,8 +15,18 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Builder
+@XmlRootElement(name = "channel")
 public class BookVO {
 
+	/*
+	 * list에 들어갈 item들의 요소
+	 * 때문에 네이버에서 제공하는 데이터 이름들과 똑같이 세팅을 해준다
+	 * 만약 이름이 다르면 값을 받지 못하고 null으로 받기 때문에 
+	 * 이 값만 제대로 설정해주면 쉽게 데이터를 받을 수 있다.
+	 * 
+	 * BookVO 잘 만든 후에 이를 담을 list인 BookList를 잘 만들면 된다.
+	 */
+	
 	private String title;		//	string	검색 결과 문서의 제목을 나타낸다. 제목에서 검색어와 일치하는 부분은 태그로 감싸져 있다.
 	private String link;		//	string	검색 결과 문서의 하이퍼텍스트 link를 나타낸다.
 	private String image;		//	string	썸네일 이미지의 URL이다. 이미지가 있는 경우만 나타납난다.
