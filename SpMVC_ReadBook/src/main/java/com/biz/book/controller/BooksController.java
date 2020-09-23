@@ -29,14 +29,14 @@ public class BooksController {
 		
 		List<BookVO> bookList = bookDao.selectAll();
 		model.addAttribute("BOOKS",bookList);
-		 return "books/list";
+		 return "books/book-list";
 		
 	}
 	
 	@RequestMapping(value="/input", method=RequestMethod.GET)
 	public String input() {
 		
-		return "books/write"
+		return "books/book-write"
 		
 		// return null로 해두면 우리가 굳이 list.jsp파일을 따로 만들지 않아도
 		// 자동으로 생성이 된다.

@@ -13,8 +13,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="td"/>
+		<item key="selection" value="red"/>
 		<list key="findhistory">
+			<item value="sea"/>
+			<item value="red"/>
 			<item value="th"/>
 			<item value="햄버거"/>
 			<item value="나의 홈페이지"/>

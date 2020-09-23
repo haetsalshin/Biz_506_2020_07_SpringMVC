@@ -1,4 +1,6 @@
 INDEX VERSION 1.131
+C:\bizwork\workspace\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3160153179.index
+\SpMVC_ReadBook\src\main\java
 C:\bizwork\workspace\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2176130668.index
 \SpMVC_BlogDB_V2\src\main\java
 C:\bizwork\workspace\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\10178491.index
