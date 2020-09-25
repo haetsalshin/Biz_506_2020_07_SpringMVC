@@ -1,0 +1,143 @@
+@charset "UTF-8";
+h3{
+	
+	text-align: center;
+}
+
+form#books {
+  width: 60%;
+  margin: 10px auto;
+}
+
+form#books div {
+  display: flex;
+  width: 95%;
+  margin: 0 auto;
+}
+
+form#books label {
+  flex: 1;
+  text-align: right;
+  padding: 8px;
+  margin: 5px;
+}
+
+form#books input {
+  flex: 5;
+  margin: 5px;
+  padding: 8px;
+}
+
+form#books fieldset {
+  border: 1px solid rgb(0, 100, 200);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+form#books #title {
+  width: 70%;
+}
+
+form#books div.button-box {
+  justify-content: flex-end;
+}
+
+form#books button {
+  border: none;
+  outline: 0;
+  padding: 0.5rem 12px;
+  border-radius: 5px;
+}
+
+form#books input {
+  /*
+   만약 input box와 button 등 다른 tag를 한줄에 나란히 놓으면서
+   input box의 width를 임의로 설정하고 싶으면
+   display를 inline-block으로 설정하자
+   
+   block으로 설정하면 width는 임의로 설정할 수 있지만
+   다른 tag를 오른쪽에 위치 할 수 없다
+   
+   기본값인 inline이면 width를 설정할 수 없다.
+   */
+  /* display: inline-block;
+  width: 90%; */
+  flex:5;
+  border: 1px solid #ddd;
+  margin: 5px;
+  padding: 8px;
+}
+
+form#books button#naver_search {
+  background-color: #088a08;
+  color: white;
+}
+
+form#books button#btn-save {
+  background-color: #df0174;
+  color: white;
+  padding: 0.5rem 25px;
+}
+
+form#books button:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+legend {
+  text-align: center;
+}
+
+/*Modal 설정
+   -------------------------------------------------
+   */
+section#book-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+article#modal-body {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  width: 70%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+div#modal-header {
+  flex: 1;
+  width: 60%;
+  text-align: right;
+  background-color: gold;
+}
+
+div#modal-header span {
+  font-size: 30px;
+  font-weight: 500;
+  color: black;
+  cursor: pointer;
+  margin: 15px;
+}
+
+div#modal-header span:hover {
+  color: red;
+}
+
+div#search-result {
+  flex: 7;
+  width: 60%;
+  padding: 30px;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(0, 150, 200, 1);
+  /* 내용이 넘치면 스크롤바를 통해서 보여줘라 */
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}

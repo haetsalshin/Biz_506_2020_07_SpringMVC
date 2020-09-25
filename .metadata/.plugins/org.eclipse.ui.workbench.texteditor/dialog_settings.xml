@@ -13,8 +13,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="red"/>
+		<item key="selection" value="&lt;form:input"/>
 		<list key="findhistory">
+			<item value="&lt;input"/>
+			<item value="name"/>
 			<item value="sea"/>
 			<item value="red"/>
 			<item value="th"/>
@@ -28,9 +30,10 @@
 			<item value="에러"/>
 			<item value="blue"/>
 			<item value="black"/>
-			<item value="filter"/>
 		</list>
 		<list key="replacehistory">
+			<item value="&lt;form:input"/>
+			<item value="path"/>
 			<item value="td"/>
 		</list>
 	</section>

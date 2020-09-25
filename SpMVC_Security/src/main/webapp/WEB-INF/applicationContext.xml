@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security-5.2.xsd">
+
+	<sec:http>
+	<!-- login으로 끝나는 url이면 모두 허가하라(모든 사람에게 인가된 페이지)
+	
+	/** : login 을 제외한 나머지 페이지는
+	 인증된 사용자만 접근할 수 있도록 허가 하는 것 
+	 
+	 이 부분은 사용자가 원하는 만큼 늘려서 사용 할 수 있다.
+	 이 부분이 많아질수록 사용자들에게 적재적소의 권한을 부여 할 수 있다-->
+		<sec:intercept-url pattern="/login" access="permitAll"/>
+		<sec:intercept-url pattern="/**" access="isAuthenticated()"/>
+		<!-- 로그인 form을 만들 건데 -->
+		<sec:form-login username-parameter="username" password-parameter="password"/>
+		
+		<sec:logout/>
+	
+	
+	
+	</sec:http>
+	<sec:authentication-manager>
+		<sec:authentication-provider>
+			<sec:user-service>
+				<sec:user name="admin11" password="{noop}12341234" authorities="ROLE_ADMIN"/>
+							
+			</sec:user-service>
+		</sec:authentication-provider>
+	</sec:authentication-manager>
+
+</beans>

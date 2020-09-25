@@ -8,6 +8,35 @@
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+		
+	<!-- PBEenctypt 클래스에서 사용할 알고리즘과 saltPAss를 설정하는 도우미 클래스
+		saltPass를 가져오기 위해서 반드시 property에 passwordEnvName을 사용하자
+		이 속성을 사용하면 Server의 환경변수에서 값을 가져올 수 있다.
+	 -->
+	<bean id="envConfig" class="org.jasypt.encryption.pbe.config.EnvironmentStringPBEConfig">
+		<property name="algorithm" value="PBEWithMD5AndDES"/>
+		<property name="passwordEnvName" value="BIZ.NET"/>
+	</bean>
+
+	<!-- 암호문을 복호화 하는 용도로 사용할 클래스 -->
+	<bean id="encConvert" class="org.jasypt.encryption.pbe.StandardPBEStringEncryptor">
+		<property name="config" ref="envConfig" />
+	</bean>
+	
+	<!-- *.properties 파일을 읽어서 ENC(**)로 되어 있는 문자열을 추출하여
+		PBE*Encryptor에게 보내서 암호문을 복호화 한 후 필요한 곳에 주입해 주는 역할
+	 -->
+	<bean class="org.jasypt.spring31.properties.EncryptablePropertyPlaceholderConfigurer">
+		<constructor-arg ref="encConvert"/>
+		<property name="fileEncoding" value="UTF-8" />
+		<property name="locations">
+			<list>
+				<value>/WEB-INF/spring/db.connect.properties</value>
+			</list>
+		</property>
+	</bean>
+
+
 
 	<!-- dataSource -->
 	<bean id="ds" class="org.apache.commons.dbcp2.BasicDataSource">
@@ -15,8 +44,8 @@
 			value="oracle.jdbc.OracleDriver" />
 		<property name="url"
 			value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<property name="username" value="user1" />
-		<property name="password" value="user1" />
+		<property name="username" value="${oracle.username}" />
+		<property name="password" value="${oracle.password}" />
 	</bean>
 
 	<!-- sqlSessionFactory -->
@@ -28,8 +57,28 @@
 	</bean>
 
 	<!-- sqlsessionTemplate -->
-	<bean class="org.mybatis.spring.SqlSessionTemplate">
+	<!-- <bean class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlFactory" index="0" />
+	</bean> -->
+
+<!-- trasaction 
+	insert할 때 3개의 table에 어떤 정보가 들어갈 때 a테이블에는 insert가 됐는데
+	B table은 insert 문제가 됐다고 하자. 그럼 이 데이터베이스는 무결성이 생긴다.
+	그런 상황이 발생하면 우리는 A B C모두 완료가 되면 OK, 중간에 하나라도 실패하면
+	fail 이 되도록 해야한다. 이게 DB의 원리. 다수의 table에 CURD 가 발생을 할 때
+	transction이라는 그룹으로 묶어서 transaction이 진행이 되어 완전히 끝이 되면
+	commit을 하라. (All Ok commit, OR Roll Back). 
+	 즉 다수의 데이터베이스에 CRUD가 발생할 때 한개의 work단위로 묶어서 한번에
+	 처리 될 수 있도록 하는 절차.
+	 
+	 
+	 java에는 이러한 트랜잭션을 할 수 있게 해주는 게 이미 있어서 sqlsesseiontemplate
+	 사용 하지 않고 이번엔 다른 bean을 사용해보도록 하겠다.
+	  : sqlSesseion의 일 + transaction 일까지 한번에 해준다.
+ -->
+ 	<tx:annotation-driven/>
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="ds"></property>
 	</bean>
 
 
