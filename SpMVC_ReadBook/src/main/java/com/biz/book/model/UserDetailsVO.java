@@ -6,12 +6,18 @@ import org.apache.ibatis.type.Alias;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Alias("UserDetail")
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserDetailsVO implements UserDetails {
 	
 	/*
@@ -31,18 +37,19 @@ public class UserDetailsVO implements UserDetails {
 	private String username;
 	private String password;
 	
-	private boolean isEnabled;
-	private boolean isAccountNonExpired;
-	private boolean isAccountNonLocked;
-	private boolean isCredentialsNonExpired;
+	private boolean Enabled;
+	private boolean accountNonExpired;
+	private boolean accountNonLocked;
+	private boolean credentialsNonExpired;
 	
 	// List<GrandtedAuthority>
 	private Collection< ? extends GrantedAuthority> authorities;
 	
 	// 프로젝트에서 필요한 별도의 필드변수 선언
 	// 필요에 따라서 넣는 값이기 때문에 필수 선언 값은 아니다
-	private String email;
-	private String phone;
-	private String address;
+	private String m_name;
+	private String m_email;
+	private String m_tel;
+	private String m_address;
 
 }

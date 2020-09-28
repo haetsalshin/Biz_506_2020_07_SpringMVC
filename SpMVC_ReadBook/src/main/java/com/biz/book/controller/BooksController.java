@@ -1,6 +1,7 @@
 package com.biz.book.controller;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -12,10 +13,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.biz.book.mapper.BookDao;
 import com.biz.book.model.BookVO;
+import com.biz.book.model.ReadBookVO;
 
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
@@ -100,6 +101,23 @@ public class BooksController {
 //		log.debug(bookVO.toString());
 		
 		model.addAttribute("BOOKVO", bookVO);
+		
+		
+		// 09-28 추가
+		LocalDateTime lDateTime = LocalDateTime.now();
+		String lDate = DateTimeFormatter.ofPattern("yyyy-MM-dd").format(lDateTime);
+		String lTime = DateTimeFormatter.ofPattern("HH:MM:SS").format(lDateTime);
+		
+		// 09-28 추가
+		ReadBookVO readBookVO = ReadBookVO.builder()
+				.r_date(lDate)
+				.r_stime(lTime)
+				.build();
+		
+		// 09-28 추가
+		model.addAttribute("readBookVO",readBookVO);
+		
+		
 		model.addAttribute("BODY", "BOOK-DETAIL");
 		return "home";
 	}

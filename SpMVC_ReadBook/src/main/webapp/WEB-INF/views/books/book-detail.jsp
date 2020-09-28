@@ -59,6 +59,13 @@
 		
 	}
 	
+	section#read-book-body{
+		width: 60%;
+		border: 1px solid #green;
+		margin: 5px auto;
+			
+	}
+	
 	
 	</style>
 	
@@ -86,7 +93,7 @@
 
 		<tr class="link">
 			<th>자세히보기</th>
-			<td><a href=${BOOKVO.link}" target=_new>바로가기</a></td>
+			<td><a href="${BOOKVO.link}" target=_new>바로가기</a></td>
 		</tr>
 		
 		<tr class="buy">
@@ -97,3 +104,11 @@
 			</th>
 		</tr>
 	</table>
+	<section id="read-book-body">
+		<%@ include file="/WEB-INF/views/readbook/read-book-write.jsp" %>
+	
+	</section>
+	
+	
+	
+	

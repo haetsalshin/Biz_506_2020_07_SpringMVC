@@ -7,6 +7,12 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
+	<!-- authProvider에서 UserDetailService를 사용해야 하기 떄문에
+		여기에 UserDetailSErvice 클래스가 있는 패키지를 스캔하도록 설정을 해줘야 한다
+	 -->
+	<context:component-scan base-package="com.biz.book.service.auth"></context:component-scan>
+
+
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->

@@ -3,12 +3,14 @@ package com.biz.book.service.auth;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import com.biz.book.mapper.AuthorityDao;
 import com.biz.book.mapper.UserDao;
 import com.biz.book.model.UserDetailsVO;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 /*
  * spring security 프로젝트에서 사용자 인가와 권한을 관리하는 클래스
@@ -20,8 +22,9 @@ import lombok.RequiredArgsConstructor;
  * 회사의 실정, 업무환경, 여러가지 여건들을 요구분석하여
  * 솔루션을 사용하는 회사에 최적화 하는 것
  */
-
+@Slf4j
 @RequiredArgsConstructor
+@Service("userDetailServiceV1")
 public class UserDetailServiceImplV1 implements UserDetailsService {
 	
 	/*
@@ -39,6 +42,7 @@ public class UserDetailServiceImplV1 implements UserDetailsService {
 	 * 	lombok의 @RequiredArgsConstructor를 사용하면
 	 * final로 선언된 모든 필드변수들을 모아서 생성자로 만들어준다.
 	 */
+	
 	private final UserDao userDao;
 	private final AuthorityDao authDao;
 	
@@ -53,11 +57,22 @@ public class UserDetailServiceImplV1 implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
 		// 사용자 정보를 DB로 부터 가져와서 return 해주는 method
+		//사용자의 여러 세부 정보를 VO 객체에 담아주는 역할 수행
 		UserDetailsVO userDetail = userDao.findById(username);
 		
+		// 테스트를 위한 임시 사용자 정보 생성
+		/*userDetail = UserDetailsVO.builder().username(username)
+											.password("12341234").Enabled(true)
+											.build();
+		*/
 		if(userDetail == null) {
+			// 강제로 일부러 UsernameOfNoFoundException발생
 			throw new UsernameNotFoundException(username + "정보를 찾을 수 없음");
 		}
+		
+		log.debug("USER:" + userDetail.toString());
+		
+		userDetail.setEnabled(true);
 		
 		return userDetail;
 	}

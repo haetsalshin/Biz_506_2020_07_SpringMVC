@@ -9,5 +9,91 @@
 		http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
 		http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security-5.2.xsd">
 
+	<context:component-scan base-package="com.biz.book.service.auth"/>
+
+	<!-- spring security 에서 사용할 AuthenticationProvider를 구현한  -->
+	<!-- 클래스를 bean 등록 -->
+	<bean id="customAuthProvider" class="com.biz.book.auth.AuthProviderImpl" />
+
+	<!-- 커스터마이징 된 AuthProvider를 spring security에서 사용하도록 
+		security:authentication-manager에 등록
+	 -->
+	<security:authentication-manager>
+		<security:authentication-provider ref="customAuthProvider"/>
+		
+	</security:authentication-manager>
+
+
+	<!-- spring securitiy의 핵심 설정 부분  -->
+	<!-- security:http -->
+	<!-- login form 설정 -->
+	<!-- login 방법 설정-->
+	<!-- login이 되었을 때 인가, 권한에 관한 설정 -->
+	<!-- login이 되었을 때 URL 패턴에 따라 접근 권한을 세밀하게 부여할 수 있다.
+		이 때 사용하는 것이  security:intercept 기능이다
+		접근할 URL을 pattern 속성에 지정하고
+		접근할 권한이 있는가를 검사하도록 access 속성에 지정한다 
+		
+		
+		! 패턴 지정에서 주의 할 사항 !
+		
+		패턴은 URL의 단계가 깊을 수록 위쪽에 먼저 작성을 해주어야 한다.
+		만약 user/**, user/a/b/c 순서로 패턴이 있을 경우 user/a/b/c는 무시된다
+		이때는 user/a/b/c, user/** 순서로 패턴을 나열해야 한다.
+		-->
+		
+		<!--use-expressions="true" 밑에 hasRole을 사용할 수 있게 해주는 것  -->
+	<security:http  auto-config="true" use-expressions="true">
+	
+	<!-- 우리가 받아오는 정보를 token을 실어서 보내는 기능을 안쓰고 싶다면 여기를 true로 해주고
+		우리는 기본값인 false를 해준다.
+		
+		ㅆ) security:csrf 의 disabled 속성을 true로 설정하면
+		POST 전송시 Token을 첨부하지 않아도 사용가능하도록 한다
+		단, 이 방법은 다른 API와 연동할 때를 제외하고 사용하지 않는 것이 좋다.
+		기본 값은 항상 disabled=false로 설정한다.
+		(사용하지 않는 것을 false로 하겠다. 사용하지 않는 것을 true로 하겠다.)
+	 -->
+		<security:csrf disabled="false"/>
+	
+		<security:form-login
+		username-parameter="username"
+		password-parameter="password"/>
+		<!-- 로그아웃이 성공하면 logout-success-url 홈화면으로 가고
+			남아있는 session이 있다면 제거해라(true)
+		  -->
+		<security:logout logout-url="/logout" logout-success-url="/" invalidate-session="true"/>
+		
+		<!-- 인가방법에 대한 url -->
+		<!-- 사용자가 어떠어떠한 url패턴으로 접근했을 때 그 사람의 권한이
+		무엇인가에 따라 허가 해주는지 마는지에 대해서 -->
+		<security:intercept-url pattern="/admin/**" access="hasRole('ADMIN')"/>
+		
+		<security:intercept-url pattern="/member/mypage" access="hasAnyRole('ADMIN','USER')"/>
+		<security:intercept-url pattern="/member/password" access="hasAnyRole('ADMIN','USER')"/>
+		<security:intercept-url pattern="/member/**" access="permitAll()"/>
+		
+		<security:intercept-url pattern="/books/**" access="hasAnyRole('ADMIN','USER')"/>
+		<security:intercept-url pattern="/**" access="permitAll()"/>
+		
+		
+		
+	</security:http>
+
+	<!-- 회원가입, 로그인해서 사용자의 비밀번호를 암호화 하기 위하여
+		암호화 도구를 bean으로 설정 
+		constructor-arg value="4" :10의 4승 만큼 반복해서 암호문을 만들어 내라
+		기본값은 4이다. 생략하면 오류가 나니 넣어준 것.
+		이 값은 1부터 우리가 원하는 만큼 넣어줄 수 있다.
+		하지만 값이 커지면 만들어내는데 시간이 무지막지 하게 걸리기 때문에 조심	
+	-->
+		
+		<bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+			<constructor-arg value="4" index="0"/>
+		
+		</bean>
+		
+	
+
 
 </beans>
