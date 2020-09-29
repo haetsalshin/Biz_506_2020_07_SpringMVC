@@ -9,5 +9,6 @@
 		<typeAlias type="com.biz.dbms.persistence.BBsDTO"
 			alias="BBsDTO" />
 	</typeAliases>
+	
 
 </configuration>

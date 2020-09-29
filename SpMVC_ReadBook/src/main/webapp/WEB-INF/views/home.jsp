@@ -67,6 +67,7 @@
     	<c:when test="${BODY == 'MEMBER_JOIN' }">
     		<%@ include file = "/WEB-INF/views/member/member-write.jsp" %>
     	</c:when>
+    	
     	<c:otherwise>
     		<%@ include file = "/WEB-INF/views/main-body.jsp" %>
     	</c:otherwise>
