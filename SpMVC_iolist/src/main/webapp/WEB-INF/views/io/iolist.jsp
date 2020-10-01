@@ -8,6 +8,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="${rootPath}/static/js/io-detail.js?ver=2020-10-01-001"> </script>
     <style>
       * {
         box-sizing: border-box;
@@ -38,11 +39,13 @@
         background-color: palegoldenrod;
       }
       table#io-table tr td {
+      cursor: pointer;
         padding: 7px;
       }
       table#io-table tr td:nth-child(1) {
         width: 8px;
       }
+    
       h3 {
         text-align: center;
         margin: 40px auto;
@@ -68,8 +71,22 @@
       #save-btn:hover a {
         background-color: red;
         text-decoration: inherit;
+        cursor: pointer;
       }
     </style>
+    <script>
+    	$(function(){
+    		$(".io_item").clcik(function(){
+    			
+    			const seq = $(this).children().eq(0).text()
+    			
+    			const seq1 = $(this).data("seq")
+    			
+    			document.location.href="${rootPath}/detail?id=" +seq
+    		})
+    	})
+    
+    </script>
   </head>
   <body>
     <section>
@@ -92,7 +109,7 @@
 				</c:when>
 				<c:otherwise>
 					<c:forEach items="${LISTS}" var="lists" varStatus="i">
-						<tr>
+						<tr class="io_item">
 							<td>${i.count}</td>
 							<td>${lists.io_date}</td>
 							<td>${lists.io_time}</td>

@@ -10,7 +10,9 @@
  	</select>
  	
  	
- 	<select id="findById"></select>
+ 	<select id="findById" resultType="IoListVO">
+ 		SELECT * FROM tbl_iolist WHERE seq =#{seq}
+ 	</select>
  	
  	
  	<insert id="insert" >
@@ -42,7 +44,29 @@
  	
  	
  	</insert>
- 	<update id="update"></update>
- 	<delete id="delete"></delete>
+ 	<update id="update">
+ 	
+ 	UPDATE tbl_ioList SET
+ 	
+		io_date=	#{io_date},
+		io_time=	#{io_time},
+		io_pname=	#{io_pname},
+		io_input=	#{io_input},
+		io_price=	#{io_price},
+		io_quan=	#{io_quan},
+		io_total=	#{io_total}
+		
+	
+	WHERE seq = #{seq}
+
+ 	
+ 	
+ 	</update>
+ 	<delete id="delete">
+ 		DELETE FROM tbl_iolist
+ 		WHERE seq = #{seq}
+ 		
+ 	
+ 	</delete>
  
  </mapper> 

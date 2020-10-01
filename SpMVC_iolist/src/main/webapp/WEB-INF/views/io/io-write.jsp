@@ -28,18 +28,22 @@
         text-align: center;
       }
       label {
+      	flex: 1;
       }
-      .io {
-        display: inline-block;
-        margin: 0;
+      #flex6{
+      	flex: 3;
       }
+      
       input {
+      display: inline-block;
+      flex: 3;
         width: 90%;
         padding: 10px;
         margin: 2px auto;
       }
       section#section-btn {
         display: inline-block;
+        text-align: center;
       }
       section#section-btn button {
         background-color: indianred;
@@ -49,6 +53,17 @@
         align-items: right;
         padding: 5px 8px;
         margin: 8px auto;
+        text-align: center;
+        cursor: pointer;
+      }
+      
+      legend div p{
+      	display: flex;
+      	border-right: 1px solid white;
+      }
+      #home a{
+      	text-decoration: none;
+      	color: white;
       }
     </style>
     
@@ -59,38 +74,46 @@
 	 <form:form modelAttribute="IoListVO">
       <legend>📄 매입매출 입력 📄</legend>
       <div>
-      <p>일자
-        <label><form:input path="io_date" placeholder="날짜"/></label>
+        <label><form:input class="flex6" type="hidden" path="seq"  placeholder="seq"/></label>
       </div>
       <div>
-      <p>시각
-        <label><form:input path="io_time" placeholder="시각" /></label>
+      
+        <label>일자<form:input class="flex6" path="io_date" type="date" placeholder="날짜"/></label>
       </div>
       <div>
-      <p>상품명
-        <label><form:input path="io_pname" placeholder="상품명" /></label>
+        <label>시각<form:input class="flex6" path="io_time" type="time" placeholder="시각" /></label>
+      </div>
+      <div>
+        <label>상품명<form:input class="flex6" path="io_pname" placeholder="상품명" /></label>
       </div>
 
       <div>
-      <p>매입/매출 구분
-      	<lable><form:input path="io_input" placeholder="매입:1,매출:2"/></lable>
+      	
+      	<label>매입/매출 구분
+      		<form:select path="io_input" class="flex6">
+      			<option value="1">매입</option>
+      			<option value="2">매출</option>
+      		</form:select>
+      	</label>
+      </div>
+      
+      
+      <div>
+
+        <label>단가<form:input class="flex6" path="io_price" placeholder="단가"/></label>
       </div>
       <div>
-      <p>단가
-        <label><form:input path="io_price" placeholder="단가"/></label>
+
+        <label>수량<form:input class="flex6" path="io_quan" placeholder="수량" /></label>
       </div>
-      <div>
-      <p>수량
-        <label><form:input path="io_quan" placeholder="수량" /></label>
-      </div>
-      <p>합계
-        <label><form:input path="io_total" placeholder="합계"/></label>
+
+        <label>합계<form:input class="flex6" path="io_total" placeholder="합계"/></label>
       </div>
     </section>
     
     <section id="section-btn">
       <div>
-        <button>처음으로</button>
+        <button id="home"><a href="${rootPath}">처음으로</a></button>
         <button type="submit">입력완료</button>
       </div>
     </section>

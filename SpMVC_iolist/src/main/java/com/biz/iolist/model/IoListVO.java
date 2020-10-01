@@ -24,5 +24,9 @@ public class IoListVO {
 	private int io_quan;
 	private int io_total;
 
+	
+	
+	private long input_total;
+	private long out_total;
 
 }

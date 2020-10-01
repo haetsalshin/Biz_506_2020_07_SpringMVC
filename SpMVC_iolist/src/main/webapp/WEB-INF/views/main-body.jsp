@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="rootPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
@@ -6,7 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name='viewport' content='width=device-width, initial-scale=1'>
+
 <title>나의 홈페이지</title>
+<script src="${rootPath}/static/js/io-detail.js?ver=2020-10-01-001"></script>
 <style>
 * {
 	box-sizing: border-box;
@@ -41,10 +44,19 @@ table#io-table th {
 
 table#io-table tr td {
 	padding: 7px;
+	cursor: pointer;
 }
 
 table#io-table tr td:nth-child(1) {
 	width: 8px;
+}
+
+table#io-table tr:nth-child(even) {
+	background-color: #f1f1f1;
+}
+
+table#io-table tr:nth-child(odd) {
+	background-color: #fff;
 }
 
 h3 {
@@ -82,37 +94,57 @@ h3 {
 			<th>일자</th>
 			<th>시각</th>
 			<th>상품명</th>
-			<th>구분</th>
-			<th>단가</th>
+			<th>매입단가</th>
+			<th>판매단가</th>
 			<th>수량</th>
-			<th>합계</th>
+			<th>매입합계</th>
+			<th>판매합계</th>
 
-			<c:choose>
-				<c:when test="${empty LISTS}">
-					<tr>
-						<td colspan="8">데이터가 없음</td>
-					</tr>
-				</c:when>
-				<c:otherwise>
-					<c:forEach items="${LISTS}" var="lists" varStatus="i">
+
+			<c:forEach items="${LISTS}" var="lists" varStatus="i">
+
+				<c:choose>
+					<c:when test="${lists.io_input =='1'}">
 						<tr>
 							<td>${i.count}</td>
 							<td>${lists.io_date}</td>
 							<td>${lists.io_time}</td>
-							<td>${lists.io_pname}</td>
-							<td>${lists.io_input}</td>
+							<td class="io-title" data-seq="${lists.seq}">${lists.io_pname}</td>
 							<td>${lists.io_price}</td>
+							<td></td>
 							<td>${lists.io_quan}</td>
 							<td>${lists.io_total}</td>
+							<td></td>
 						</tr>
 
-					</c:forEach>
+					</c:when>
+					<c:otherwise>
+						<tr>
+							<td>${i.count}</td>
+							<td>${lists.io_date}</td>
+							<td>${lists.io_time}</td>
+							<td class="io-title" data-seq="${lists.seq}">${lists.io_pname}</td>
+							<td></td>
+							<td>${lists.io_price}</td>
+							<td>${lists.io_quan}</td>
+							<td></td>
+							<td>${lists.io_total}</td>
+
+						</tr>
+					</c:otherwise>
+
+				</c:choose>
+				<c:if test="${i.last}">
+					<tr>
+						<td colspan="7">
+						<td>${lists.input_total}</td>
+						<td>${lists.out_total}</td>
+					</tr>
+
+				</c:if>
 
 
-				</c:otherwise>
-
-			</c:choose>
-
+			</c:forEach>
 		</table>
 		<div>
 			<button id="save-btn">
