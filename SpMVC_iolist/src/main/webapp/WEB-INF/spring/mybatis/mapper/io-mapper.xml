@@ -11,7 +11,37 @@
  	
  	
  	<select id="findById"></select>
- 	<insert id="insert"></insert>
+ 	
+ 	
+ 	<insert id="insert" >
+ 	
+ 	INSERT INTO tbl_iolist(
+ 	
+	 	seq,
+		IO_DATE,
+		IO_TIME,
+		IO_PNAME,
+		IO_INPUT,
+		IO_PRICE,
+		IO_QUAN,
+		IO_TOTAL
+ 	
+ 	
+ 	) VALUES (
+	 	SEQ_IOLIST.NEXTVAL,
+		#{io_date},
+		#{io_time},
+		#{io_pname},
+		#{io_input},
+		#{io_price},
+		#{io_quan},
+		#{io_total}
+ 	
+ 	
+ 	)
+ 	
+ 	
+ 	</insert>
  	<update id="update"></update>
  	<delete id="delete"></delete>
  

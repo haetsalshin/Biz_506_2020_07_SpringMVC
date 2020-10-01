@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>    
 <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+<%@taglib uri ="http://www.springframework.org/tags/form" prefix="form"%>
 <c:set var="rootPath" value="${pageContext.request.contextPath}" />    
 
 <style>
@@ -10,7 +11,7 @@
         margin: 0;
       }
       body,
-      html {
+      html { 
         padding: 20px;
         margin: 0 auto;
         width: 60%;
@@ -55,38 +56,42 @@
 <body> -->
 
 	 <section id="section-write">
+	 <form:form modelAttribute="IoListVO">
       <legend>📄 매입매출 입력 📄</legend>
       <div>
-        <label><input type="date" /></label>
+      <p>일자
+        <label><form:input path="io_date" placeholder="날짜"/></label>
       </div>
       <div>
-        <label><input type="time" placeholder="시각" /></label>
+      <p>시각
+        <label><form:input path="io_time" placeholder="시각" /></label>
       </div>
       <div>
-        <label><input placeholder="상품명" /></label>
+      <p>상품명
+        <label><form:input path="io_pname" placeholder="상품명" /></label>
       </div>
-      <secton id="section-inout">
-        <div>
-          <label class="io"
-            ><input type="radio" name="inout" value="1" />매입</label
-          >
-        </div>
-        <div>
-          <label class="io"
-            ><input type="radio" name="inout" value="2" />매출</label
-          >
-        </div>
-      </secton>
+
       <div>
-        <label><input placeholder="단가" /></label>
+      <p>매입/매출 구분
+      	<lable><form:input path="io_input" placeholder="매입:1,매출:2"/></lable>
       </div>
       <div>
-        <label><input type="number" placeholder="수량" /></label>
+      <p>단가
+        <label><form:input path="io_price" placeholder="단가"/></label>
+      </div>
+      <div>
+      <p>수량
+        <label><form:input path="io_quan" placeholder="수량" /></label>
+      </div>
+      <p>합계
+        <label><form:input path="io_total" placeholder="합계"/></label>
       </div>
     </section>
+    
     <section id="section-btn">
       <div>
         <button>처음으로</button>
-        <button>입력완료</button>
+        <button type="submit">입력완료</button>
       </div>
     </section>
+</form:form>

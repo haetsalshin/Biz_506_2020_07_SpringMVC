@@ -35,7 +35,16 @@ public class IoListImplV1 implements IoService {
 
 	@Override
 	public int insert(IoListVO vo) {
-		return 0;
+		
+		int ret = ioListDao.insert(vo);
+		
+		if(ret>0) {
+			log.debug("INSERT 성공 {}개의 데이터 추가", ret);
+		}else {
+			log.debug("INSERT 실패 : {} ",ret);
+		}
+		
+		return ret;
 	}
 
 	@Override
