@@ -15,6 +15,10 @@
 		<item key="isRegEx" value="false"/>
 		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="USER:"/>
+			<item value="transactional"/>
+			<item value="GET"/>
+			<item value="list"/>
 			<item value="1234"/>
 			<item value="password"/>
 			<item value="&lt;input"/>
@@ -26,10 +30,6 @@
 			<item value="나의 홈페이지"/>
 			<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;"/>
 			<item value="&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot;%&gt;"/>
-			<item value="&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;"/>
-			<item value="test"/>
-			<item value="에러발생"/>
-			<item value="에러"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
