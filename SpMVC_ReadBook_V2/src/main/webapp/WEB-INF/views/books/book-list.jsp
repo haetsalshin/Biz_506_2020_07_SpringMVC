@@ -9,10 +9,25 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>나의 홈페이지</title>
 <link href="${rootPath }/static/css/book-list.css?ver=2020-09-24-002" rel="stylesheet">
-<script src="${rootPath}/static/js/book-list.js?ver=2020-09-24"></script>
+<script>
+
+$(function () {
+	  $("tr.book-item").click(function () {
+	    let seq = $(this).data("seq");
+	    // query string방식(원래 우리가 쓰던 방식)
+	    // document.location.href = `${rootPath}/books/detail?=${seq}`;
+
+	    // path Varriable 방식
+	    // js파일에서는 `백틱을 사용해도 되지만 jsp 파일에서는 백틱 사용하면 안된다.
+	    document.location.href = "${rootPath}/books/detail/" + seq;
+	  });
+	});
+
+
+</script>
 </head>
 <body>
-	<h3>보유도서리스트</h3>
+	<h3>보유 도서 리스트</h3>
 	<table id="book-list">
 		<tr>
 			<th>No</th>
@@ -34,7 +49,7 @@
 			</c:when> 
 			<c:otherwise>
 				<c:forEach items="${BOOKS}" var="book" varStatus="i">
-					<tr>
+					<tr class="book-item" data-seq="${book.seq}">
 						<td>${i.count}</td>
 						<td class="book-title" 
 							data-seq="${book.seq}">${book.title }</td>

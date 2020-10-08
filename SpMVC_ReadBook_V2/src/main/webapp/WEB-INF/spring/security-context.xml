@@ -11,6 +11,15 @@
 
 	<context:component-scan base-package="com.biz.book.service.auth"/>
 
+	<!-- 권한 검사를 할 때 prefix 설정하는 클래스 bean
+		이 클래스를 bean 설정하면서 construct-arg value="" : prefix 제거하는 효과
+		security 버전마다 조금씩 차이가 있어서 설정값이 적용이 안되는 경우가 있다.
+		보통은 설정하지 않고 기본값으로 접두어를 붙여서 사용한다. : ROLE_ADMIN 
+	  -->
+	<!-- org.springframework.security.config.core.GrantedAuthorityDefaults -->
+	
+
+
 	<!-- spring security 에서 사용할 AuthenticationProvider를 구현한  -->
 	<!-- 클래스를 bean 등록 -->
 	<bean id="customAuthProvider" class="com.biz.book.auth.AuthProviderImpl" />
@@ -67,13 +76,13 @@
 		<!-- 인가방법에 대한 url -->
 		<!-- 사용자가 어떠어떠한 url패턴으로 접근했을 때 그 사람의 권한이
 		무엇인가에 따라 허가 해주는지 마는지에 대해서 -->
-		<security:intercept-url pattern="/admin/**" access="hasRole('ADMIN')"/>
+		<security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
 		
-		<security:intercept-url pattern="/member/mypage" access="hasAnyRole('ADMIN','USER')"/>
-		<security:intercept-url pattern="/member/password" access="hasAnyRole('ADMIN','USER')"/>
+		<security:intercept-url pattern="/member/mypage" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
+		<security:intercept-url pattern="/member/password" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
 		<security:intercept-url pattern="/member/**" access="permitAll()"/>
 		
-		<security:intercept-url pattern="/books/**" access="hasAnyRole('ADMIN','USER')"/>
+		<security:intercept-url pattern="/books/**" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
 		<security:intercept-url pattern="/**" access="permitAll()"/>
 		
 		

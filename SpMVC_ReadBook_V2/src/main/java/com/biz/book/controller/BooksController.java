@@ -78,8 +78,8 @@ public class BooksController {
 	
 	@RequestMapping(value="/input", method=RequestMethod.GET)
 	public String input(@ModelAttribute("bookVO") BookVO bookVO, Model model) {
-		
-		
+
+
 		
 		model.addAttribute("BODY", "BOOK-WRITE");
 		model.addAttribute("bookVO",bookVO);
