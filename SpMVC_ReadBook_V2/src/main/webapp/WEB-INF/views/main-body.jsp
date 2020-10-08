@@ -12,8 +12,8 @@
 		margin: 40px auto;
 		text-align: center;
 	}
-	a{
-		background-image: url("../images/bookboy.png");
+	section#div-pic {
+		background-image: url("../images/photo-1491841550275-ad7854e35ca6.jpg");
 	}
 
 </style>
@@ -24,6 +24,6 @@
 		<h3>가장 훌륭한 벗은 가장 좋은 책이다</h3>
 		<h5>-체스터필드-</h5>
 	</div>
-	<div id="div-pic"><a></a></div>
+	<div class="div-pic"></div>
 
 </section>

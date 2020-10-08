@@ -88,6 +88,7 @@
 
 			<c:otherwise>
 				<%@ include file="/WEB-INF/views/main-body.jsp"%>
+				
 			</c:otherwise>
 
 

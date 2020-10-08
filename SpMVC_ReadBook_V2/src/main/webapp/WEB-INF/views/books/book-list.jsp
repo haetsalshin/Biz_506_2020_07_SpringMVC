@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>나의 홈페이지</title>
-<link href="${rootPath }/static/css/book-list.css?ver=2020-09-24-002" rel="stylesheet">
+<link href="${rootPath }/static/css/book-list.css?ver=2020-09-24-005" rel="stylesheet">
 <script>
 
 $(function () {
