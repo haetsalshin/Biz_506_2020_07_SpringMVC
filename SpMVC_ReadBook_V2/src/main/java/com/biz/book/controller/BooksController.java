@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -17,9 +16,11 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.biz.book.mapper.BookDao;
+import com.biz.book.mapper.ReadBookDao;
 import com.biz.book.model.BookVO;
 import com.biz.book.model.ReadBookVO;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /*
@@ -27,6 +28,7 @@ import lombok.extern.slf4j.Slf4j;
  * 현재 클래스의 모든 method에서 DB와 연동되는 부분이
  * 자동으로 Transactional이 적용된다.
  */
+@RequiredArgsConstructor
 @SessionAttributes("bookVO")
 @Transactional
 @Slf4j
@@ -34,9 +36,9 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping(value = "/books")
 public class BooksController {
 	
-	// service를 거치지 않고 바로 handling하도록
-	@Autowired
-	private BookDao bookDao;
+	
+	private final BookDao bookDao;
+	private final ReadBookDao rbookDao;
 	
 	@ModelAttribute("bookVO")
 	public BookVO newBookVO() {
@@ -146,6 +148,10 @@ public class BooksController {
 				.r_date(lDate)
 				.r_stime(lTime)
 				.build();
+		
+		List<ReadBookVO> readList = rbookDao.findByBSeq(seq);
+		model.addAttribute("READ_BOOK", readList);
+		
 		
 		// 09-28 추가
 		model.addAttribute("readBookVO",readBookVO);

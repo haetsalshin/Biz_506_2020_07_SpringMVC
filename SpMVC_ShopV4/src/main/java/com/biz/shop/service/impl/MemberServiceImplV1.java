@@ -110,8 +110,7 @@ public class MemberServiceImplV1 implements MemberService {
 	 * 2. 결과값이 null이면 Controller로 즉시 null 값 return : login Fail
 	 * 3. 결과값이 null이 아니면 password를 비교
 	 * 		가. 일치하면 : Login OK, MemberVO를 Controller로 return
-	 * 		나. 일치하지 않으면 : Password Fail, Controller로 Password Fail 알림
-	 * 
+	 * 		나. 일치하지 않으면 : Password Fail, Controller로 Password Fail 알림 
 	 */
 	@Override
 	public MemberVO login(MemberVO loginVO) {
