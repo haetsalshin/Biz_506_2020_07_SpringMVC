@@ -13,8 +13,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="DataSourceTrans"/>
+		<item key="selection" value="BooksController"/>
 		<list key="findhistory">
+			<item value="booksController"/>
+			<item value="독서록"/>
 			<item value="datasourcetrans"/>
 			<item value="USER:"/>
 			<item value="transactional"/>
@@ -28,8 +30,6 @@
 			<item value="red"/>
 			<item value="th"/>
 			<item value="햄버거"/>
-			<item value="나의 홈페이지"/>
-			<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
