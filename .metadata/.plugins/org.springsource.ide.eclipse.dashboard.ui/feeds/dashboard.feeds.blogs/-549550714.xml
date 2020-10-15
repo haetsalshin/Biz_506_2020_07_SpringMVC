@@ -5,7 +5,29 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-10-14T19:17:45Z</updated>
+  <updated>2020-10-15T06:08:44Z</updated>
+  <entry>
+    <title>Premiering: Bootiful Kotlin</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/10/15/premiering-bootiful-kotlin" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-10-15:4231</id>
+    <updated>2020-10-15T06:08:44Z</updated>
+    <content type="html">&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/nso-sPLfaTk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;Hi, Spring fans! In this talk Spring Developer Advocate, Java Champion, and Kotlin Google Developer Advocate Josh Long (&lt;a href="http://twitter.com/starbuxman"&gt;@starbuxman&lt;/a&gt;) introduces the Kotlin ecosystem, the language, and its application when building server-side Spring applications.&lt;/p&gt;
+&lt;p&gt;This is a roving tour of all things Kotlin, and there&amp;rsquo;s a lot to cover, including:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;building Android applications with Kotlin on mobile devices&lt;/li&gt;
+  &lt;li&gt;building native applications with Kotlin and Kotlin Native ((m)alloc, pointers, and POSIX APIs, oh, my!)&lt;/li&gt;
+  &lt;li&gt;giving existing APIs like the venerable &lt;code&gt;JdbcTemplate&lt;/code&gt; a fresh coat of paint with Kotlin&lt;/li&gt;
+  &lt;li&gt;using Kotlin ecosystem libraries like the Exposed ORM with Spring&lt;/li&gt;
+  &lt;li&gt;using rich DSLs such as those provided for Spring Framework&amp;rsquo;s programmatic bean registration, HTTP endpoints, and for Spring Cloud Gateway&lt;/li&gt;
+  &lt;li&gt;kicking up our reactive applications a notch with coroutines&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Integration 5.4 Release Candidate 1 Available</title>
     <link rel="alternate" href="https://spring.io/blog/2020/10/14/spring-integration-5-4-release-candidate-1-available" />
@@ -1390,22 +1412,6 @@ SSDG &lt;code&gt;2.4.0-RC1&lt;/code&gt; is now based on Apache Geode &lt;code&gt
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Lightbend CTO Jonas Bon?r on his epic, aspect-oriented, distributed, reactive work</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/09/17/a-bootiful-podcast-lightbend-cto-jonas-bon-r-on-his-epic-aspect-oriented-distributed-reactive-work" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-09-17:4210</id>
-    <updated>2020-09-17T22:31:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode, &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to his friend and Lightbend CTO &lt;a href="http://twitter.com/jboner"&gt;Jonas Bon?r (@jboner)&lt;/a&gt; about his epic, aspect-oriented, distributed, and reactive work over the decades, about the cooperation with the Spring team on the &lt;a href="http://reactive-streams.io/"&gt;Reactive Streams&lt;/a&gt;, the &lt;a href="http://Reactive.foundation"&gt;Reactive Foundation&lt;/a&gt;, and more. &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Check out the &lt;a href="https://www.reactivesummit.org/"&gt;upcoming Reactive Summit&lt;/a&gt;! Both Jonas and Josh will be speaking there :-)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe title="Lightbend CTO Jonas Bon?r on his epic, aspect-oriented, distributed, reactive work " height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/media/player/c9h6k-ec02b2?from=pb6admin&amp;download=1&amp;version=1&amp;auto=0&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Helvetica&amp;skin=1&amp;pfauth=&amp;btn-skin=107"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
