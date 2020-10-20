@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	
+	
+		<!-- 동시에 여러개를 업로드 했을 시 전체 사이즈 값  -->
+		<property name="maxUploadSize" value="25000000"/>
+		<!-- 파일 1개당 사이즈 (약 2MB) -->
+		<property name="maxUploadSizePerFile" value="2500000"/>
+	</bean>
+	
+</beans>

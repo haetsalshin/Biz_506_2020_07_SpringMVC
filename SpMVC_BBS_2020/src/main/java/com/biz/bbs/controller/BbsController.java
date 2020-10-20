@@ -2,24 +2,36 @@ package com.biz.bbs.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.biz.bbs.model.BBsVO;
 import com.biz.bbs.service.BBsService;
+import com.biz.bbs.service.FileService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
-@RequiredArgsConstructor
+@Slf4j
+//@RequiredArgsConstructor
 @Controller
 @RequestMapping(value = "/bbs")
 public class BbsController {
 	
+	@Autowired
 	@Qualifier("bbsServiceV1")
-	private final BBsService bbsService;
+	private BBsService bbsService;
+	
+	@Autowired
+	@Qualifier("fileServiceV4")
+	private FileService fileService;
 	
 	
 	/*
@@ -50,18 +62,31 @@ public class BbsController {
 		return "bbs/write";
 	}
 	
+	/*
+	 * form에서 보낸 파일 받기
+	 * MultipartFile 클래스를 매개변수로 설정하여 파일을 받기
+	 * 이 클래스에 @RequestParam(이름) : 이름 = form에서 input type=file로 설정된
+	 * 		tag의 name값
+	 */
 	@RequestMapping(value = "/write",method=RequestMethod.POST)
-	public String write(BBsVO bbsVO) {
+	public String write(BBsVO bbsVO, @RequestParam("file")MultipartFile file) {
 		
+		log.debug("업로드한 파일 이름 : "+ file.getOriginalFilename());
+		String fileName =fileService.fileUp(file);
+		bbsVO.setB_file(fileName);
 		bbsService.insert(bbsVO);
 		
 		return "redirect:/bbs/list";
 	}
 	
 	
-	@RequestMapping(value = "/detail", method=RequestMethod.GET)
-	public String detail() {
+	@RequestMapping(value = "/detail/{seq}", method=RequestMethod.GET)
+	public String detail(@PathVariable("seq")String seq, Model model) {
 		
+		long long_seq = Long.valueOf(seq);
+		BBsVO bbsVO = bbsService.findBySeq(long_seq);
+		
+		model.addAttribute("BBSVO", bbsVO);
 		return "bbs/detail";
 	}
 

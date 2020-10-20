@@ -51,3 +51,4 @@
 		<property name="jdbcTypeForNull" value="VARCHAR"/>
 	</bean>
 </property>
+
