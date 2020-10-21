@@ -13,8 +13,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="BooksController"/>
+		<item key="selection" value="업로드한"/>
 		<list key="findhistory">
+			<item value="업로드한"/>
 			<item value="booksController"/>
 			<item value="독서록"/>
 			<item value="datasourcetrans"/>
@@ -29,7 +30,6 @@
 			<item value="sea"/>
 			<item value="red"/>
 			<item value="th"/>
-			<item value="햄버거"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>

@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.time.LocalDateTime"/>
-<fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
-<fullyQualifiedTypeName name="org.springframework.security.authentication.UsernamePasswordAuthenticationToken"/>
-<fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetailsService"/>
-<fullyQualifiedTypeName name="com.biz.book.service.MemberService"/>
-<fullyQualifiedTypeName name="org.springframework.security.crypto.password.PasswordEncoder"/>
-<fullyQualifiedTypeName name="org.springframework.security.authentication.BadCredentialsException"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestAttribute"/>
-<fullyQualifiedTypeName name="com.biz.iolist.mapper.GenericDao"/>
-<fullyQualifiedTypeName name="com.biz.iolist.mapper.IoListDao"/>
 <fullyQualifiedTypeName name="com.biz.iolist.service.GenericService"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
 <fullyQualifiedTypeName name="com.biz.iolist.service.IoService"/>
@@ -19,7 +8,6 @@
 <fullyQualifiedTypeName name="com.biz.book.model.UserDetailsVO"/>
 <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetails"/>
 <fullyQualifiedTypeName name="javax.net.ssl.SSLEngineResult.Status"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.support.SessionStatus"/>
 <fullyQualifiedTypeName name="org.springframework.security.authentication.AuthenticationProvider"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
@@ -38,7 +26,6 @@
 <fullyQualifiedTypeName name="com.biz.book.mapper.GenericDao"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.type.Alias"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
-<fullyQualifiedTypeName name="lombok.extern.slf4j.Slf4j"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
 <fullyQualifiedTypeName name="lombok.Setter"/>
 <fullyQualifiedTypeName name="lombok.Getter"/>
@@ -50,9 +37,6 @@
 <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Select"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Delete"/>
 <fullyQualifiedTypeName name="com.biz.bbs.service.BBsService"/>
-<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
-<fullyQualifiedTypeName name="lombok.RequiredArgsConstructor"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.jdbc.SQL"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Insert"/>
@@ -60,4 +44,20 @@
 <fullyQualifiedTypeName name="org.apache.ibatis.annotations.UpdateProvider"/>
 <fullyQualifiedTypeName name="com.biz.bbs.sql.BBsSQL"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+<fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartFile"/>
+<fullyQualifiedTypeName name="java.io.BufferedOutputStream"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
+<fullyQualifiedTypeName name="com.biz.bbs.service.FileService"/>
+<fullyQualifiedTypeName name="com.biz.bbs.service.FileServiceImplV1"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="org.springframework.core.io.ResourceLoader"/>
+<fullyQualifiedTypeName name="lombok.RequiredArgsConstructor"/>
+<fullyQualifiedTypeName name="org.springframework.core.io.Resource"/>
+<fullyQualifiedTypeName name="lombok.extern.slf4j.Slf4j"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.util.UUID"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 </qualifiedTypeNameHistroy>
