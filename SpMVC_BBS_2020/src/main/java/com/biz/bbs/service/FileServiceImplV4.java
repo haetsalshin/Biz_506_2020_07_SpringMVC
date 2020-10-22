@@ -26,6 +26,21 @@ import lombok.extern.slf4j.Slf4j;
 @Service("fileServiceV4")
 public class FileServiceImplV4 extends FileServiceImplV1 {
 
+	/*
+	 * 필드(맴버)변수를 private final로 선언했을 경우 보통 final로 선언된 변수는 선언과 동시에 생성
+	 * (초기화)를 해야한다. 
+	 * private final로 선언된 맴버변수는 
+	 * 클래스의 생성자 메서드에서 초기화하는 것을 허용한다. 
+	 * 
+	 * private final로 선언된 맴버변수는 반드시 클래스의 생성자 메서드에서 초기화를 해야한다.
+	 * 
+	 * 
+	 */
+	private final String rootFolder;
+	public FileServiceImplV4() {
+		rootFolder = "C:/bizwork/workspace/upload";
+	}
+	
 	
 	@Override
 	public String fileUp(MultipartFile file) {
@@ -70,6 +85,20 @@ public class FileServiceImplV4 extends FileServiceImplV1 {
 		// UUID가 부착된 파일이름을 Controller로 return하여 DB에 저장하는
 		// 용도로 사용한다.
 		return saveFileName;
+	}
+	
+	public boolean fileDelete(String b_file) {
+		
+		boolean ret = false;
+		File deleteFile = new File(rootFolder, b_file);
+		if(deleteFile.exists()) {
+			
+			//파일을 삭제하면 true return
+			ret = deleteFile.delete();
+	
+		}
+		
+		return ret;
 	}
 
 	

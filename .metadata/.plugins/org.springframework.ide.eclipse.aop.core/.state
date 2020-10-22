@@ -2,7 +2,5 @@
 <aop-reference-model>
 <aop-project name="SpMVC_BBS_2020"/>
 <aop-project name="SpMVC_Security_V2"/>
-<aop-project name="SpMVC_iolist"/>
-<aop-project name="SpMVC_ReadBook_V2"/>
 <aop-project name="SpMVC_ShopV4"/>
 </aop-reference-model>

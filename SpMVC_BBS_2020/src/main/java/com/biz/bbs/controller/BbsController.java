@@ -89,5 +89,20 @@ public class BbsController {
 		model.addAttribute("BBSVO", bbsVO);
 		return "bbs/detail";
 	}
+	@RequestMapping(value="/{seq}/{url}", method=RequestMethod.GET)
+	public String update(@PathVariable("seq") String seq,@PathVariable("url") String url, Model model) {
+		
+		long long_seq = Long.valueOf(seq);
+		String ret_url = "redirect:/bbs/list";
+		
+		if(url.equalsIgnoreCase("DELETE")) {
+			bbsService.delete(long_seq);
+		} else if(url.equalsIgnoreCase("UPDATE")) {
+			model.addAttribute("BBSVO",bbsService.findBySeq(long_seq));
+			ret_url ="/bbs/write";
+		}
+		
+		return ret_url;
+	}
 
 }

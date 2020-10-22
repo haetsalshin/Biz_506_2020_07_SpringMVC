@@ -55,5 +55,11 @@ public class FileServiceImplV1 implements FileService {
 		
 		return null;
 	}
+
+	@Override
+	public boolean fileDelete(String b_file) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 }

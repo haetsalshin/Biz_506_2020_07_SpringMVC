@@ -103,10 +103,17 @@
             if(e.target.className == "delete"){
                if(confirm("정말 삭제할까요?")){
                   
-                  let data = {seq:"${BBSVO.b_seq}"}
+                  let data = {seq:"${BBSVO.b_seq}",
+                		  subject : "${BBSVO.b_subject}"
+                		  
                   
+                  }
+                  // fetch를 통해서 데이터를 순수하게 못보내기 때문에 
+                  // JSON형태로 만들어서 데이터를 문자열화 만들어서 
+                  // controller로 보내면
+                  // controller가 requestBody가 이를 받아서 다시 원래데이터로 바꾼다
                   fetch("${rootPath}/api/bbs",
-                		  { method : "DELETE",
+                		  { method : "PUT",
                 	  		headers : {
                 	  			"Content-Type" : "application/json"
                 	  			
@@ -118,14 +125,12 @@
                   
                   
                   )
-                  .then(function(){
+                  .then(function(result){
                 	  alert("성공")
                   })
                   .catch(function(error){
                 	  alert("실패")
                   })
-                  
-                  
                   
                   
                   return false;

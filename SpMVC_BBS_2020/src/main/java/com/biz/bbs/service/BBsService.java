@@ -12,6 +12,6 @@ public interface BBsService {
 
 	public BBsVO findBySeq(long long_seq);
 	
-	
+	public int delete(long long_seq);
 	
 }
