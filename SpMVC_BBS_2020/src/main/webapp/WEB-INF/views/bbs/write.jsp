@@ -119,6 +119,11 @@
 		<label>이미지</label>
 		<input type="file" name="file" accept="image/*">
 	
+	</div> 
+	<div>
+		<label>멀티 이미지</label>
+		<input type="file" name="files" accept="image/*" multiple="multiple">
+	
 	</div>
 	<div class="button-box">
 		<button type="button" id="list">리스트</button>

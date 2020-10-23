@@ -16,7 +16,10 @@ public class BBsSQL {
 		// SQL을 사용하면 오라클과 mySQL을 동시에 이용할 수 있어서 매우 편리하다
 		SQL sql = new SQL();
 		sql.INSERT_INTO("tbl_bbs");
-		sql.INTO_COLUMNS("b_seq").INTO_VALUES("seq_bbs.NEXTVAL");
+		
+		//sql.INTO_COLUMNS("b_seq").INTO_VALUES("seq_bbs.NEXTVAL");
+		sql.INTO_COLUMNS("b_seq").INTO_VALUES("#{b_seq}");
+		
 		sql.INTO_COLUMNS("b_date").INTO_VALUES("#{b_date}");
 		sql.INTO_COLUMNS("b_time").INTO_VALUES("#{b_time}");
 		sql.INTO_COLUMNS("b_writer").INTO_VALUES("#{b_writer}");

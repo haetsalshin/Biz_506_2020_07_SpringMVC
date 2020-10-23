@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectKey;
 import org.apache.ibatis.annotations.UpdateProvider;
 
 import com.biz.bbs.model.BBsVO;
@@ -22,8 +23,15 @@ public interface BBsDao {
 	/*
 	 * BBsSQL 클래스에 정의된 bbs_insert method를 호출하여
 	 * SQL문을 생성하고, 여기에 코드를 추가하라
+	 * 
+	 * @SelectKey : insert문을 시작하기 전에 before true (이전에)
+	 * SELECT SEQ_BBS.NEXTVAL FROM DUAL 를 실행해서 시퀀스 값을 만들어서
+	 * b_seq 칼럼 값에 넣어라. bbsVO의 타입은 이때 Long형이다.
 	 */
 	@InsertProvider(type = BBsSQL.class,method="bbs_insert")
+	@SelectKey(keyProperty = "b_seq",
+		statement = "SELECT SEQ_BBS.NEXTVAL FROM DUAL",
+		resultType = Long.class,before = true)
 	public int insert(BBsVO bbsVO);
 	
 	@UpdateProvider(type = BBsSQL.class,method="bbs_update")

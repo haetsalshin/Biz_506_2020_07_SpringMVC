@@ -36,7 +36,13 @@ public class FileServiceImplV4 extends FileServiceImplV1 {
 	 * 
 	 * 
 	 */
-	private final String rootFolder;
+	/*
+	 * private으로 선언된 rootFolder 변수를
+	 * protected으로 변경
+	 * protected로 선언된 변수들은 현재 클래스를 상속 받은 
+	 * 클래스에서 그대로 사용이 가능하다.
+	 */
+	protected final String rootFolder;
 	public FileServiceImplV4() {
 		rootFolder = "C:/bizwork/workspace/upload";
 	}
@@ -45,9 +51,11 @@ public class FileServiceImplV4 extends FileServiceImplV1 {
 	@Override
 	public String fileUp(MultipartFile file) {
 
-		// mkdir : 폴더를 만드는 운영체제 명령어 
-		// mkdirs : rootpath하의 모든 폴더가 없을시(C:/bizwork/workspace)한번에 생성하는 것
-		String rootFolder = "C:/bizwork/workspace/upload";
+		if(file == null) {
+			return null;
+		}
+		
+		
 		File dir = new File(rootFolder);
 		// 파일을 업로드 할 폴더를 검사하여 없으면 새로 생성해달라
 		if(!dir.exists()) {
