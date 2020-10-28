@@ -17,13 +17,13 @@
 </style>
 </head>
 <body>
-	<h3>📫 보낸 Email 내역 📫</h3>
+	<h3>📫 상세 Email 내역 📫</h3>
 	<p>보내는 Email : ${EMS.from_email}</p>
 	<p>받는 Email : ${EMS.to_email}</p>
 	<p>보내는 날짜 : ${EMS.s_date}</p>
 	<p>보내는 시각 : ${EMS.s_time}</p>
 	<p>제목  : ${EMS.s_subject}</p>
-	<p>내용 : ${EMS.s_content }</p>
+	<p>내용 : ${EMS.s_content}</p>
 </body>
 <a href="${rootPath}/">처음으로</a>
 </html>

@@ -12,11 +12,23 @@
 <style>
 	*{
 	font-family: 'East Sea Dokdo', cursive;
-	
+	box-sizing: border-box;
 	
 	}
 	h3{
 	font-size: 40px;
+	text-align: center;
+	}
+	#h4{
+		width: 20%;
+		border-bottom: 2px dotted red;
+		align-items: center;
+		
+	}
+	h4{
+	font-size: 25px;
+	text-align: center;
+	
 	}
 	table#ems-list{
 		width: 80%;
@@ -28,16 +40,25 @@
 	}
 	
 	td, th{
-	font-size: 30px;
+	font-size: 25px;
 		border:  1px solid #ccc;
 	}
 	
 	div{
 	font-size: 30px;
 	}
+	#write{
+		text-align: center;
+	}
 </style>
+
 <body>
-	<h3>💯나의 홈페이지 방문을 환영합니다💯</h3>
+	<h3>📁나의 EMS SERVICE📁</h3>
+	
+	<div id="h4">
+	<h4>❗ 수정을 원하면 제목을 클릭해주세요 ❗</h4>
+	</div>
+	
 	<table id="ems-list">
 		<tr>
 			<th>발송 email</th>
@@ -45,7 +66,7 @@
 			<th>발송 일자</th>
 			<th>발송 시각</th>
 			<th>제목</th>
-			
+			<th>삭제</th>
 		</tr>
 		<c:if test="${empty EMS_LIST}">
 			<tr>
@@ -56,9 +77,17 @@
 			<tr>
 				<td>${ems.from_email}</td>
 				<td>${ems.to_email}</td>
-				<td>${ems.s_time}</td>
 				<td>${ems.s_date}</td>
-				<td>${ems.s_content}</td>
+				<td>${ems.s_time}</td>
+				<td>
+				<a href="${rootPath}/update?id=${ems.id}">
+				${ems.s_subject}
+				</a>
+				
+				</td>
+				<td>
+					<a href="${rootPath}/delete?id=${ems.id}">삭제</a>
+				</td>
 			</tr>
 			
 			
@@ -67,7 +96,7 @@
 	
 	</table>
 	
-	<div>
+	<div id="write">
 		<a href="${rootPath}/write">메일작성</a>
 	</div>
 </body>
