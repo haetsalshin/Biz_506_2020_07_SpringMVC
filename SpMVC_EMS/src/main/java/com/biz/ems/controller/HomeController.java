@@ -131,6 +131,8 @@ public class HomeController {
 				fileService.fileDelete(emsOldVO.getS_file1());
 			}
 			
+			
+			
 			// 3-5. 새로 변경된 파일이름을 VO에 저장하여 update 준비
 			emsVO.setS_file1(file_1_Name);
 			
@@ -139,7 +141,7 @@ public class HomeController {
 			// 3-7. DB에서 추출한 vo에서 파일이름을 update할 vo에 복사
 			emsVO.setS_file1(emsOldVO.getS_file1()); // 원래 있던 파일 이름을 복제해서 사용하라
 		}
-		
+
 		// 4. upload된 file2가 있는지 검사해서 emsVO에 setting
 		if(!file2.getOriginalFilename().isEmpty()) {
 			String file_2_Name = fileService.fileUp(file2);

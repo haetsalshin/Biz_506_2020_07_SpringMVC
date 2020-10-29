@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
 <aop-project name="SpMVC_BBS_2020"/>
-<aop-project name="SpMVC_Security_V2"/>
+<aop-project name="SpMVC_EMS"/>
 <aop-project name="SpMVC_ShopV4"/>
 </aop-reference-model>

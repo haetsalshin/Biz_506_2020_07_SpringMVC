@@ -13,8 +13,12 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="업로드한"/>
+		<item key="selection" value="윙크"/>
 		<list key="findhistory">
+			<item value="윙크"/>
+			<item value="PDATE 수행한 후 결과 "/>
+			<item value="PDATE 수행한 후 결과 {}개 성공"/>
+			<item value="DELETE"/>
 			<item value="업로드한"/>
 			<item value="booksController"/>
 			<item value="독서록"/>
@@ -26,10 +30,6 @@
 			<item value="1234"/>
 			<item value="password"/>
 			<item value="&lt;input"/>
-			<item value="name"/>
-			<item value="sea"/>
-			<item value="red"/>
-			<item value="th"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
