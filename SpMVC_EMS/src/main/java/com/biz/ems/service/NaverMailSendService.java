@@ -64,11 +64,11 @@ public class NaverMailSendService {
 			mHelper.setText(emsVO.getS_content(),true);
 			
 			FileSystemResource rs = null;
-			if(!s_file1.isEmpty()) {
+			if(s_file1 != null && !s_file1.isEmpty()) {
 				rs = new FileSystemResource(new File(uploadFoler, s_file1));
 				mHelper.addAttachment(s_file1, rs);
 			}
-			if(!s_file2.isEmpty()) {
+			if(s_file2 != null && !s_file2.isEmpty()) {
 				rs = new FileSystemResource(new File(uploadFoler, s_file2));
 				mHelper.addAttachment(s_file2, rs);
 			}
