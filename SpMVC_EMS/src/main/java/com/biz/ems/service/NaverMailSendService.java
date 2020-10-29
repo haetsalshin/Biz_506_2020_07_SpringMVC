@@ -1,9 +1,12 @@
 package com.biz.ems.service;
 
+import java.io.File;
+
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -16,10 +19,17 @@ public class NaverMailSendService {
 	@Autowired
 	private JavaMailSender xMail;
 	
+	@Autowired
+	private String winPath;
+	
 	public void sendMail(EmsVO emsVO) {
+		
+		String uploadFoler = winPath;
 		
 		String from_email = emsVO.getFrom_email();
 		String to_email = emsVO.getTo_email();
+		String s_file1 = emsVO.getS_file1();
+		String s_file2 = emsVO.getS_file2();
 		/*
 		 * Mime Type
 		 * 인터넷 TCP/IP를 통해서 주고받는 문서(파일) 등은
@@ -43,11 +53,28 @@ public class NaverMailSendService {
 		MimeMessageHelper mHelper = null;
 		
 		try {
+			// 첫번째 값을 true : HTML적용을 한 메세지를 보낼 수 있다.
+			// 두번째 값을 true : 메시지에 이미지 파일을 적용하여 보낼 수 있다.
 			mHelper = new MimeMessageHelper(message,true,"UTF-8");
 			mHelper.setFrom(from_email);
 			mHelper.setTo(to_email);
 			mHelper.setSubject(emsVO.getS_subject());
+			
+			// 두번째 값을 true : HTML 적용을 한 메세지를 보낼 수 있다.
 			mHelper.setText(emsVO.getS_content(),true);
+			
+			FileSystemResource rs = null;
+			if(!s_file1.isEmpty()) {
+				rs = new FileSystemResource(new File(uploadFoler, s_file1));
+				mHelper.addAttachment(s_file1, rs);
+			}
+			if(!s_file2.isEmpty()) {
+				rs = new FileSystemResource(new File(uploadFoler, s_file2));
+				mHelper.addAttachment(s_file2, rs);
+			}
+
+			
+			
 			
 			xMail.send(message);
 			
