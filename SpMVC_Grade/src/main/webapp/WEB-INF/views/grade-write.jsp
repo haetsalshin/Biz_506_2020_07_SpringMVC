@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
 <c:set var="rootPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
@@ -7,11 +8,28 @@
 <meta charset="UTF-8">
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>나의 홈페이지</title>
+<style>
+*{
+		font-family: 'Nanum Myeongjo', serif;
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	h3{
+		margin: 30px 0;
+		padding: 20px;
+		text-align: center;
+	}
+	div{
+		width: 90%;
+	
+	}
+</style>
 </head>
 <body>
 
 	<h3>학생의 성적을 입력해주세요</h3>
-	<form method="POST">
+	<form method="POST" id="form">
 		<div>
 			<label>학번</label> <input name="g_id" placeholder="S001형식으로 입력해주세요" value="${GRADE.g_id}">
 		</div>

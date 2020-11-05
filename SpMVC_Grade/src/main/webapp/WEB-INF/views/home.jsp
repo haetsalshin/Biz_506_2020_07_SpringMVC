@@ -17,15 +17,31 @@
 		padding: 0;
 	}
 	h3{
-		display: flex;
 		margin: 30px 0;
 		padding: 20px;
+		text-align: center;
+	}
+	#table{
+		border-collapse: collapse;
+		text-align: center;
+		border: 1px solid #ccc;
+		width: 89%;
+		margin: 20px auto;
+		
+	}
+	th, td{
+		border: 1px solid #ccc;
+		padding: 5px;
+		text-align: center;
+	}
+	#div-input{
+		text-align: center;
 	}
 </style>
 </head>
 <body>
 	<h3>성적 처리 프로그램 V1</h3>
-	<table>
+	<table id="table">
 		<tr>
 			<th>학번</th>
 			<th>이름</th>
@@ -59,7 +75,7 @@
 		</tr>
 	</c:forEach>
 	</table>
-	<div>
+	<div id="div-input">
 		<a href="${rootPath}/input">성적입력하기</a>
 	</div>
 </body>

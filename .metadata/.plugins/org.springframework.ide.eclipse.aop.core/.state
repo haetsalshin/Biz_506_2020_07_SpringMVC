@@ -4,5 +4,6 @@
 <aop-project name="SpMVC_EMS2"/>
 <aop-project name="SpMVC_EMS"/>
 <aop-project name="SpMVC_Grade"/>
-<aop-project name="SpMVC_ShopV4"/>
+<aop-project name="SpMVC_ReadBook"/>
+<aop-project name="SpMVC_ShopV2"/>
 </aop-reference-model>

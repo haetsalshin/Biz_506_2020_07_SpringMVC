@@ -104,7 +104,7 @@ public class HomeController {
 		
 
 		gradeVO.setG_sum(gradeVO.getG_kor()+gradeVO.getG_eng()+gradeVO.getG_math());
-		gradeVO.setG_avg(gradeVO.getG_sum()/3);
+		gradeVO.setG_avg((float)gradeVO.getG_sum()/3);
 		
 		gradeList.add(gradeVO);
 		
