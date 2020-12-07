@@ -9,9 +9,7 @@
 		document.querySelector("#nav-bbs").addEventListener("click",function(){
 			document.location.href="${rootPath}/bbs/list"
 			
-			
 		})
-		
 		
 	})
 	
